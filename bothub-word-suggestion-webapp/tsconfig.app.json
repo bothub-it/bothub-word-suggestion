@@ -5,10 +5,10 @@
     "types": []
   },
   "include": [
-    "src/**/*.ts"
+    "bothub-word-suggestion-webapp/src/**/*.ts"
   ],
   "exclude": [
-    "src/test.ts",
-    "src/**/*.spec.ts"
+    "bothub-word-suggestion-webapp/src/test.ts",
+    "bothub-word-suggestion-webapp/src/**/*.spec.ts"
   ]
 }
