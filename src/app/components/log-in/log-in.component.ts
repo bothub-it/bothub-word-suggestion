@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-log-in',
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
-  constructor() { }
+  endpoint = 'http://127.0.0.1:5000/test';
+  suggestion: any = [];
+  message = '';
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
+
+  getData(formData) {
+    this.http.post(this.endpoint, formData.text).subscribe(
+      data  => {
+        try {
+          // @ts-ignore
+          this.suggestion = data.text;
+          this.message = '';
+        } catch (e) {
+          this.suggestion = [];
+          this.message = 'Nenhuma palavra similar encontrada';
+        }
+      },
+      error  => {
+        console.log('Error', error);
+      });
+  }
+
+  onClickSubmit(formData) {
+    this.getData(formData);
+}
 
 }

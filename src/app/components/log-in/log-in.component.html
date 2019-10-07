@@ -1,22 +1,20 @@
 <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
 
     <mat-card class="box">
-      <mat-card-header>
-        <mat-card-title>Log in</mat-card-title>
-      </mat-card-header>
-  
-      <form class="example-form">
+      <form #sentence = "ngForm" (ngSubmit) = "onClickSubmit(sentence.value)" class="example-form">
         <mat-card-content>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Username">
+            <input matInput type = "text" name = "text" placeholder="Palavra" ngModel>
           </mat-form-field>
-  
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Password">
-          </mat-form-field>
+          {{message}}
         </mat-card-content>
-        <button mat-stroked-button color="accent" class="btn-block">Log in</button>
+        <mat-chip-list >
+          <mat-chip color="primary" selected *ngFor="let item of suggestion;">{{item.sentence}}</mat-chip>
+        </mat-chip-list>
+        <p></p>
+        <button mat-stroked-button color="accent" class="btn-block">Submeter</button>
+
       </form>
     </mat-card>
-  
+
   </div>
