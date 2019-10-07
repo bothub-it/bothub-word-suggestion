@@ -9,7 +9,7 @@ app = Flask(__name__)
 model = None
 
 
-@app.route("/", methods=['POST'])
+@app.route("/v1/get_similars", methods=['POST'])
 def test_model_api():
     try:
         sentence = request.get_data()
