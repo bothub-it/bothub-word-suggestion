@@ -35,6 +35,4 @@ RUN cd /
 COPY run_all.sh .
 RUN chmod +x run_all.sh
 
-EXPOSE 4200
-
 CMD ./run_all.sh
