@@ -6,7 +6,7 @@ WORKDIR $WORKDIR
 # Install Node.js
 RUN apt-get update && \
     apt-get install -y \
-    curl
+    curl nginx
 
 RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash -
 
@@ -22,6 +22,10 @@ COPY . /app
 RUN npm install
 RUN npm install -g @angular/cli@8.0.3
 
-EXPOSE 4200
+EXPOSE 80
 
-CMD ng serve --host 0.0.0.0
+RUN ng build --prod
+
+RUN rm -rf /var/www/html/ && cp -rf /app/dist/angular-material-login-template/ /var/www/html/
+
+CMD ["nginx", "-g", "daemon off;"]
