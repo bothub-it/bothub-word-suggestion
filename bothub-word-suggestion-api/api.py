@@ -1,8 +1,8 @@
 from gensim.models import KeyedVectors
-from timeit import default_timer as timer
 from flask import Flask
 from flask import request
 from flask import jsonify
+from waitress import serve
 
 
 app = Flask(__name__)
@@ -32,13 +32,15 @@ def test_model_api():
 
 def setup_model():
     global model
-    start = timer()
     print("Loading model...")
     model = KeyedVectors.load_word2vec_format("word2vec.vec", binary=False)
-    end = timer()
-    print('Model ready: finished in: ', end - start,)
+
+
+def main():
+    setup_model()
+    serve(app, host='0.0.0.0', port=5000)
+    # app.run(debug=False)
 
 
 if __name__ == '__main__':
-    setup_model()
-    app.run(debug=True)
+    main()
