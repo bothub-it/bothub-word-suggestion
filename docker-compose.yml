@@ -1,19 +1,15 @@
-version: '2'
+version: '3'
 
 services:
   suggestions-api:
-    # build: bothub-word-suggestion-api/Dockerfile
-    image: suggestions-api:latest
+    build:
+      context: ./bothub-word-suggestion-api/
     ports:
      - "5000:5000"
-    restart:
-      - always
   suggestions-webapp:
-    # build: bothub-word-suggestion-webapp/Dockerfile
-    image: suggestions-webapp:latest
+    build:
+      context: ./bothub-word-suggestion-webapp/
     depends_on:
       - suggestions-api
     ports:
       - "4200:80"
-    restart:
-      - always
