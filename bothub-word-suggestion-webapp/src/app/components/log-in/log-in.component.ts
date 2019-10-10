@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class LogInComponent implements OnInit {
 
-  endpoint = 'http://127.0.0.1:5000/v1/get_similars';
+  endpoint = 'http://localhost:5000/v1/get_similars';
   suggestion: any = [];
   message = '';
 
