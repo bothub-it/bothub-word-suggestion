@@ -26,6 +26,6 @@ EXPOSE 80
 
 RUN ng build --prod
 
-RUN rm -rf /var/www/html/ && cp -rf /app/dist/angular-material-login-template/ /var/www/html/
+RUN rm -rf /var/www/html/ && cp -rf /app/dist/word-suggestions/ /var/www/html/
 
 CMD ["nginx", "-g", "daemon off;"]
