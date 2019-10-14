@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 
 /* Components */
-import { LogInComponent } from './components/log-in/log-in.component';
+import { SuggestionComponent } from './components/log-in/suggestion.component';
 
 /* Http */
 import { HttpClientModule } from '@angular/common/http';
@@ -26,8 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    LogInComponent,
-    LogInComponent
+    SuggestionComponent,
+    SuggestionComponent
   ],
   imports: [
     BrowserModule,

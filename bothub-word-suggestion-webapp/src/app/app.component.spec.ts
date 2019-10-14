@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-material-login-template'`, () => {
+  it(`should have as title 'word-suggestions'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('angular-material-login-template');
+    expect(app.title).toEqual('word-suggestions');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-material-login-template!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to word-suggestions!');
   });
 });

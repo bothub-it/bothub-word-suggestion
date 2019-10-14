@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LogInComponent } from './components/log-in/log-in.component';
+import { SuggestionComponent } from './components/log-in/suggestion.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '', component: LogInComponent}
+  { path: '', pathMatch: 'full', redirectTo: '', component: SuggestionComponent}
 ];
 
 @NgModule({

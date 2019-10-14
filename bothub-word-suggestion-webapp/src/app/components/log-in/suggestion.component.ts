@@ -3,12 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-log-in',
-  templateUrl: './log-in.component.html',
-  styleUrls: ['./log-in.component.css']
+  templateUrl: './suggestion.component.html',
+  styleUrls: ['./suggestion.component.css']
 })
-export class LogInComponent implements OnInit {
+export class SuggestionComponent implements OnInit {
 
-  endpoint = 'http://127.0.0.1:5000/v1/get_similars';
+  endpoint = 'http://suggestions-api.ilhasoft.dev/v1/get_similars';
   suggestion: any = [];
   message = '';
 
