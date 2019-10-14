@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  suggestions-api:
+    build:
+      context: ./bothub-word-suggestion-api/
+    ports:
+     - "5000:5000"
+  suggestions-webapp:
+    build:
+      context: ./bothub-word-suggestion-webapp/
+    depends_on:
+      - suggestions-api
+    ports:
+      - "4200:80"
