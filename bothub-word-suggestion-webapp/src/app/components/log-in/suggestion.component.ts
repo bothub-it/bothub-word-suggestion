@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SuggestionComponent implements OnInit {
 
-  endpoint = 'http://suggestions-api.ilhasoft.dev/v1/get_similars';
+  endpoint = 'https://suggestions-api.ilhasoft.dev/v1/get_similars';
   suggestion: any = [];
   message = '';
 
