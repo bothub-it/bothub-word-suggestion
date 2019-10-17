@@ -1,18 +1,10 @@
-FROM ubuntu:18.04
+FROM node:12.2.0
 
 ENV WORKDIR /app
 WORKDIR $WORKDIR
 
-# Install Node.js
 RUN apt-get update && \
-    apt-get install -y \
-    curl nginx
-
-RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash -
-
-RUN apt-get install -y \
-    nodejs \
-    build-essential \
+    apt-get install -y nginx \
     && rm -rf /var/lib/apt/lists/*
 
 ENV PATH /home/app/node_modules/.bin:$PATH
